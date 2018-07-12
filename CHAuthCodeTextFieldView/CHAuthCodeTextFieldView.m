@@ -8,7 +8,7 @@
 
 #import "CHAuthCodeTextFieldView.h"
 #import "CHAuthCodeTextField.h"
-#import "Masonry.h"
+#import <Masonry/Masonry.h>
 
 @interface CHAuthCodeTextFieldView () <UITextFieldDelegate ,CHAuthCodeTextFieldDeleteBackwardDelegate>
 
