@@ -1,0 +1,403 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		26D2F87CD19B64D6E1CB5555 /* libPods-CHAuthCodeTextFieldViewDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F26C47AD4A999EF506DA3557 /* libPods-CHAuthCodeTextFieldViewDemo.a */; };
+		4322A03E20F76991004A18E0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4322A03D20F76991004A18E0 /* AppDelegate.m */; };
+		4322A04120F76991004A18E0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4322A04020F76991004A18E0 /* ViewController.m */; };
+		4322A04420F76991004A18E0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4322A04220F76991004A18E0 /* Main.storyboard */; };
+		4322A04620F76992004A18E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4322A04520F76992004A18E0 /* Assets.xcassets */; };
+		4322A04920F76992004A18E0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4322A04720F76992004A18E0 /* LaunchScreen.storyboard */; };
+		4322A04C20F76992004A18E0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4322A04B20F76992004A18E0 /* main.m */; };
+		4322A05720F769AC004A18E0 /* CHAuthCodeTextFieldView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4322A05320F769AB004A18E0 /* CHAuthCodeTextFieldView.m */; };
+		4322A05820F769AC004A18E0 /* CHAuthCodeTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 4322A05420F769AB004A18E0 /* CHAuthCodeTextField.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		4322A03920F76991004A18E0 /* CHAuthCodeTextFieldViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CHAuthCodeTextFieldViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4322A03C20F76991004A18E0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		4322A03D20F76991004A18E0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		4322A03F20F76991004A18E0 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		4322A04020F76991004A18E0 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		4322A04320F76991004A18E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4322A04520F76992004A18E0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4322A04820F76992004A18E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4322A04A20F76992004A18E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4322A04B20F76992004A18E0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		4322A05320F769AB004A18E0 /* CHAuthCodeTextFieldView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHAuthCodeTextFieldView.m; sourceTree = "<group>"; };
+		4322A05420F769AB004A18E0 /* CHAuthCodeTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHAuthCodeTextField.m; sourceTree = "<group>"; };
+		4322A05520F769AB004A18E0 /* CHAuthCodeTextFieldView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHAuthCodeTextFieldView.h; sourceTree = "<group>"; };
+		4322A05620F769AB004A18E0 /* CHAuthCodeTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHAuthCodeTextField.h; sourceTree = "<group>"; };
+		8D1C2EF46F7CD51925E0C22C /* Pods-CHAuthCodeTextFieldViewDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CHAuthCodeTextFieldViewDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-CHAuthCodeTextFieldViewDemo/Pods-CHAuthCodeTextFieldViewDemo.release.xcconfig"; sourceTree = "<group>"; };
+		E4C8643D04C18EC7E41AA811 /* Pods-CHAuthCodeTextFieldViewDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CHAuthCodeTextFieldViewDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CHAuthCodeTextFieldViewDemo/Pods-CHAuthCodeTextFieldViewDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		F26C47AD4A999EF506DA3557 /* libPods-CHAuthCodeTextFieldViewDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CHAuthCodeTextFieldViewDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4322A03620F76991004A18E0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26D2F87CD19B64D6E1CB5555 /* libPods-CHAuthCodeTextFieldViewDemo.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4322A03020F76991004A18E0 = {
+			isa = PBXGroup;
+			children = (
+				4322A03B20F76991004A18E0 /* CHAuthCodeTextFieldViewDemo */,
+				4322A03A20F76991004A18E0 /* Products */,
+				9EE4469060C4F404DF9B8FF4 /* Pods */,
+				9E2CD891E3AA7557CBFAE907 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		4322A03A20F76991004A18E0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4322A03920F76991004A18E0 /* CHAuthCodeTextFieldViewDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4322A03B20F76991004A18E0 /* CHAuthCodeTextFieldViewDemo */ = {
+			isa = PBXGroup;
+			children = (
+				4322A05220F769AB004A18E0 /* CHAuthCodeTextFieldView */,
+				4322A03C20F76991004A18E0 /* AppDelegate.h */,
+				4322A03D20F76991004A18E0 /* AppDelegate.m */,
+				4322A03F20F76991004A18E0 /* ViewController.h */,
+				4322A04020F76991004A18E0 /* ViewController.m */,
+				4322A04220F76991004A18E0 /* Main.storyboard */,
+				4322A04520F76992004A18E0 /* Assets.xcassets */,
+				4322A04720F76992004A18E0 /* LaunchScreen.storyboard */,
+				4322A04A20F76992004A18E0 /* Info.plist */,
+				4322A04B20F76992004A18E0 /* main.m */,
+			);
+			path = CHAuthCodeTextFieldViewDemo;
+			sourceTree = "<group>";
+		};
+		4322A05220F769AB004A18E0 /* CHAuthCodeTextFieldView */ = {
+			isa = PBXGroup;
+			children = (
+				4322A05520F769AB004A18E0 /* CHAuthCodeTextFieldView.h */,
+				4322A05320F769AB004A18E0 /* CHAuthCodeTextFieldView.m */,
+				4322A05620F769AB004A18E0 /* CHAuthCodeTextField.h */,
+				4322A05420F769AB004A18E0 /* CHAuthCodeTextField.m */,
+			);
+			name = CHAuthCodeTextFieldView;
+			path = ../../CHAuthCodeTextFieldView;
+			sourceTree = "<group>";
+		};
+		9E2CD891E3AA7557CBFAE907 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F26C47AD4A999EF506DA3557 /* libPods-CHAuthCodeTextFieldViewDemo.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9EE4469060C4F404DF9B8FF4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E4C8643D04C18EC7E41AA811 /* Pods-CHAuthCodeTextFieldViewDemo.debug.xcconfig */,
+				8D1C2EF46F7CD51925E0C22C /* Pods-CHAuthCodeTextFieldViewDemo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4322A03820F76991004A18E0 /* CHAuthCodeTextFieldViewDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4322A04F20F76992004A18E0 /* Build configuration list for PBXNativeTarget "CHAuthCodeTextFieldViewDemo" */;
+			buildPhases = (
+				C05CA6431DDAF86EC10EF1FD /* [CP] Check Pods Manifest.lock */,
+				4322A03520F76991004A18E0 /* Sources */,
+				4322A03620F76991004A18E0 /* Frameworks */,
+				4322A03720F76991004A18E0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CHAuthCodeTextFieldViewDemo;
+			productName = CHAuthCodeTextFieldViewDemo;
+			productReference = 4322A03920F76991004A18E0 /* CHAuthCodeTextFieldViewDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4322A03120F76991004A18E0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0940;
+				ORGANIZATIONNAME = "张晨晖";
+				TargetAttributes = {
+					4322A03820F76991004A18E0 = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
+				};
+			};
+			buildConfigurationList = 4322A03420F76991004A18E0 /* Build configuration list for PBXProject "CHAuthCodeTextFieldViewDemo" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4322A03020F76991004A18E0;
+			productRefGroup = 4322A03A20F76991004A18E0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4322A03820F76991004A18E0 /* CHAuthCodeTextFieldViewDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4322A03720F76991004A18E0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4322A04920F76992004A18E0 /* LaunchScreen.storyboard in Resources */,
+				4322A04620F76992004A18E0 /* Assets.xcassets in Resources */,
+				4322A04420F76991004A18E0 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		C05CA6431DDAF86EC10EF1FD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CHAuthCodeTextFieldViewDemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4322A03520F76991004A18E0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4322A05820F769AC004A18E0 /* CHAuthCodeTextField.m in Sources */,
+				4322A05720F769AC004A18E0 /* CHAuthCodeTextFieldView.m in Sources */,
+				4322A04120F76991004A18E0 /* ViewController.m in Sources */,
+				4322A04C20F76992004A18E0 /* main.m in Sources */,
+				4322A03E20F76991004A18E0 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		4322A04220F76991004A18E0 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4322A04320F76991004A18E0 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		4322A04720F76992004A18E0 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4322A04820F76992004A18E0 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4322A04D20F76992004A18E0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		4322A04E20F76992004A18E0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4322A05020F76992004A18E0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E4C8643D04C18EC7E41AA811 /* Pods-CHAuthCodeTextFieldViewDemo.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = F22VTWNS57;
+				INFOPLIST_FILE = CHAuthCodeTextFieldViewDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.chenhuizhang.CHAuthCodeTextFieldViewDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4322A05120F76992004A18E0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8D1C2EF46F7CD51925E0C22C /* Pods-CHAuthCodeTextFieldViewDemo.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = F22VTWNS57;
+				INFOPLIST_FILE = CHAuthCodeTextFieldViewDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.chenhuizhang.CHAuthCodeTextFieldViewDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4322A03420F76991004A18E0 /* Build configuration list for PBXProject "CHAuthCodeTextFieldViewDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4322A04D20F76992004A18E0 /* Debug */,
+				4322A04E20F76992004A18E0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4322A04F20F76992004A18E0 /* Build configuration list for PBXNativeTarget "CHAuthCodeTextFieldViewDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4322A05020F76992004A18E0 /* Debug */,
+				4322A05120F76992004A18E0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4322A03120F76991004A18E0 /* Project object */;
+}
