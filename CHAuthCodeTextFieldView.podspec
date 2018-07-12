@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
     s.author       = { "张晨晖" => "shdows007@gmail.com" }
     s.platform     = :ios
     s.source       = { :git => "https://github.com/MeteoriteMan/CHAuthCodeTextFieldView.git", :tag => "0.0.1" }
-    s.source_files = "CHAuthCodeTextFieldView/*.{h,m}"
+    s.source_files = 'CHAuthCodeTextFieldView/**/*.{h,m}'
     s.frameworks   = 'Foundation', 'UIKit', 'Masonry'
-    s.dependency   = 'Masonry'
+    s.dependency 'Masonry', '~> 1.1.0'
 end
