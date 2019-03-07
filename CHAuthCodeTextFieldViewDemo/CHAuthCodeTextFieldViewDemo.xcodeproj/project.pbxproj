@@ -16,6 +16,7 @@
 		4322A04C20F76992004A18E0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4322A04B20F76992004A18E0 /* main.m */; };
 		4322A05720F769AC004A18E0 /* CHAuthCodeTextFieldView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4322A05320F769AB004A18E0 /* CHAuthCodeTextFieldView.m */; };
 		4322A05820F769AC004A18E0 /* CHAuthCodeTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 4322A05420F769AB004A18E0 /* CHAuthCodeTextField.m */; };
+		439C91D3222FB00800330030 /* CHAuthCodeTextFieldMeiTuanStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 439C91D2222FB00800330030 /* CHAuthCodeTextFieldMeiTuanStyle.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,9 @@
 		4322A05420F769AB004A18E0 /* CHAuthCodeTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHAuthCodeTextField.m; sourceTree = "<group>"; };
 		4322A05520F769AB004A18E0 /* CHAuthCodeTextFieldView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHAuthCodeTextFieldView.h; sourceTree = "<group>"; };
 		4322A05620F769AB004A18E0 /* CHAuthCodeTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHAuthCodeTextField.h; sourceTree = "<group>"; };
+		439C91D1222FB00800330030 /* CHAuthCodeTextFieldMeiTuanStyle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CHAuthCodeTextFieldMeiTuanStyle.h; sourceTree = "<group>"; };
+		439C91D2222FB00800330030 /* CHAuthCodeTextFieldMeiTuanStyle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CHAuthCodeTextFieldMeiTuanStyle.m; sourceTree = "<group>"; };
+		43AB2C89222F96F600074020 /* CHAuthCodeTextFieldViewHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CHAuthCodeTextFieldViewHeader.h; sourceTree = "<group>"; };
 		8D1C2EF46F7CD51925E0C22C /* Pods-CHAuthCodeTextFieldViewDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CHAuthCodeTextFieldViewDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-CHAuthCodeTextFieldViewDemo/Pods-CHAuthCodeTextFieldViewDemo.release.xcconfig"; sourceTree = "<group>"; };
 		E4C8643D04C18EC7E41AA811 /* Pods-CHAuthCodeTextFieldViewDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CHAuthCodeTextFieldViewDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CHAuthCodeTextFieldViewDemo/Pods-CHAuthCodeTextFieldViewDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		F26C47AD4A999EF506DA3557 /* libPods-CHAuthCodeTextFieldViewDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CHAuthCodeTextFieldViewDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -74,6 +78,8 @@
 				4322A05220F769AB004A18E0 /* CHAuthCodeTextFieldView */,
 				4322A03C20F76991004A18E0 /* AppDelegate.h */,
 				4322A03D20F76991004A18E0 /* AppDelegate.m */,
+				439C91D1222FB00800330030 /* CHAuthCodeTextFieldMeiTuanStyle.h */,
+				439C91D2222FB00800330030 /* CHAuthCodeTextFieldMeiTuanStyle.m */,
 				4322A03F20F76991004A18E0 /* ViewController.h */,
 				4322A04020F76991004A18E0 /* ViewController.m */,
 				4322A04220F76991004A18E0 /* Main.storyboard */,
@@ -88,6 +94,7 @@
 		4322A05220F769AB004A18E0 /* CHAuthCodeTextFieldView */ = {
 			isa = PBXGroup;
 			children = (
+				43AB2C89222F96F600074020 /* CHAuthCodeTextFieldViewHeader.h */,
 				4322A05520F769AB004A18E0 /* CHAuthCodeTextFieldView.h */,
 				4322A05320F769AB004A18E0 /* CHAuthCodeTextFieldView.m */,
 				4322A05620F769AB004A18E0 /* CHAuthCodeTextField.h */,
@@ -209,6 +216,7 @@
 				4322A05820F769AC004A18E0 /* CHAuthCodeTextField.m in Sources */,
 				4322A05720F769AC004A18E0 /* CHAuthCodeTextFieldView.m in Sources */,
 				4322A04120F76991004A18E0 /* ViewController.m in Sources */,
+				439C91D3222FB00800330030 /* CHAuthCodeTextFieldMeiTuanStyle.m in Sources */,
 				4322A04C20F76992004A18E0 /* main.m in Sources */,
 				4322A03E20F76991004A18E0 /* AppDelegate.m in Sources */,
 			);
@@ -354,7 +362,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = F22VTWNS57;
 				INFOPLIST_FILE = CHAuthCodeTextFieldViewDemo/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.chenhuizhang.CHAuthCodeTextFieldViewDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -369,7 +380,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = F22VTWNS57;
 				INFOPLIST_FILE = CHAuthCodeTextFieldViewDemo/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.chenhuizhang.CHAuthCodeTextFieldViewDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";

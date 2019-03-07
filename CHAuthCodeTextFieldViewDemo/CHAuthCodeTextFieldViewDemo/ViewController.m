@@ -7,9 +7,10 @@
 //
 
 #import "ViewController.h"
-#import "CHAuthCodeTextFieldView.h"
+#import "CHAuthCodeTextFieldViewHeader.h"
 #import <Masonry.h>
 #import <MBProgressHUD.h>
+#import "CHAuthCodeTextFieldMeiTuanStyle.h"
 
 @interface ViewController ()
 
@@ -22,21 +23,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    self.authCodeTextFieldView = [[CHAuthCodeTextFieldView alloc] init];
-    self.authCodeTextFieldView.numberOfTextField = 6;
-    self.authCodeTextFieldView.sizeOfTextField = CGSizeMake(40, 43);
-    self.authCodeTextFieldView.intervalLeft = 26;
-    self.authCodeTextFieldView.intervalRight = 26;
-    self.authCodeTextFieldView.textFieldBorderWidth = 1;
-    self.authCodeTextFieldView.textFieldBorderCornerRadius = 4;
-    self.authCodeTextFieldView.textFieldCursorColor = [UIColor greenColor];
+    self.authCodeTextFieldView = [[CHAuthCodeTextFieldView alloc] initWithCHAuthCodeTextTextFieldSubClass:[CHAuthCodeTextFieldMeiTuanStyle class]];
+    self.authCodeTextFieldView.numberOfTextField = 4;
+    self.authCodeTextFieldView.textFieldInterval = 8;
+    self.authCodeTextFieldView.textFieldNormalFont = [UIFont systemFontOfSize:30];
+    self.authCodeTextFieldView.textFieldCursorColor = [UIColor darkGrayColor];
     self.authCodeTextFieldView.textFiledKeyboardType = UIKeyboardTypeNumberPad;
-    self.authCodeTextFieldView.textFieldBorderNormalColor = [UIColor darkTextColor];
-    self.authCodeTextFieldView.textFieldBorderEditingColor = [UIColor greenColor];
+    [self.authCodeTextFieldView becomeEditStatus];
     __weak typeof(self) weakSelf = self;
-    self.authCodeTextFieldView.authCodeTextFieldViewInputEndBlock = ^(NSString *numberStr) {
-
-        if ([numberStr isEqualToString:@"111111"]) {
+    self.authCodeTextFieldView.authCodeTextFieldViewInputEndBlock = ^(CHAuthCodeTextFieldView *authCodeTextFieldView, NSString *numberStr) {
+        if ([numberStr isEqualToString:@"1111"]) {
             MBProgressHUD *progressHUD = [MBProgressHUD showHUDAddedTo:weakSelf.view animated:YES];
             progressHUD.label.text = @"验证通过";
             [progressHUD hideAnimated:YES afterDelay:2];
@@ -50,13 +46,14 @@
             progressHUD.completionBlock = ^{
                 [weakSelf.authCodeTextFieldView clearAllInputs];
             };
-            [weakSelf.authCodeTextFieldView clearAllInputs];
         }
     };
     [self.view addSubview:self.authCodeTextFieldView];
     [self.authCodeTextFieldView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.right.offset(0);
+        make.left.offset(22);
+        make.right.offset(-22);
         make.top.equalTo(self.mas_topLayoutGuide).offset(44);
+        make.height.offset(80);
     }];
 
     [self.authCodeTextFieldView reloadData];

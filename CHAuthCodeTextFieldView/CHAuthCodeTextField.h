@@ -19,4 +19,16 @@
 
 @property (nonatomic ,weak) id<CHAuthCodeTextFieldDeleteBackwardDelegate> authCodeTextFieldDeleteBackwardDelegate;
 
+/// 输入框字体
+@property (nonatomic ,strong) UIFont *textFieldNormalFont;
+
+/// 输入框字体
+@property (nonatomic ,strong) UIFont *textFieldEditingFont;
+
+/// 默认状态
+- (void)setTextFieldNormarl;
+
+/// 编辑状态
+- (void)setTextFieldEdit;
+
 @end

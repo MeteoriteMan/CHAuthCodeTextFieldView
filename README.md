@@ -11,34 +11,11 @@
  self.authCodeTextFieldView = [[CHAuthCodeTextFieldView alloc] init];
     self.authCodeTextFieldView.numberOfTextField = 6;
     self.authCodeTextFieldView.sizeOfTextField = CGSizeMake(40, 43);
-    self.authCodeTextFieldView.intervalLeft = 26;
-    self.authCodeTextFieldView.intervalRight = 26;
-    self.authCodeTextFieldView.textFieldBorderWidth = 1;
-    self.authCodeTextFieldView.textFieldBorderCornerRadius = 4;
-    self.authCodeTextFieldView.textFieldCursorColor = [UIColor greenColor];
-    self.authCodeTextFieldView.textFiledKeyboardType = UIKeyboardTypeNumberPad;
-    self.authCodeTextFieldView.textFieldBorderNormalColor = [UIColor darkTextColor];
-    self.authCodeTextFieldView.textFieldBorderEditingColor = [UIColor greenColor];
+    self.authCodeTextFieldView.textFieldInterval = 4
     __weak typeof(self) weakSelf = self;
     self.authCodeTextFieldView.authCodeTextFieldViewInputEndBlock = ^(NSString *numberStr) {
 		//在这里进行输入数据是否正确的判断
-        if ([numberStr isEqualToString:@"111111"]) {
-            MBProgressHUD *progressHUD = [MBProgressHUD showHUDAddedTo:weakSelf.view animated:YES];
-            progressHUD.label.text = @"验证通过";
-            [progressHUD hideAnimated:YES afterDelay:2];
-            progressHUD.completionBlock = ^{
-                [weakSelf.authCodeTextFieldView clearAllInputs];
-            };
-        } else {
-            MBProgressHUD *progressHUD = [MBProgressHUD showHUDAddedTo:weakSelf.view animated:YES];
-            progressHUD.label.text = @"验证码错误,请重新输入";
-            [progressHUD hideAnimated:YES afterDelay:2];
-            progressHUD.completionBlock = ^{
-                [weakSelf.authCodeTextFieldView clearAllInputs];
-            };
-            [weakSelf.authCodeTextFieldView clearAllInputs];
-        }
-    };
+	};
     [self.view addSubview:self.authCodeTextFieldView];
     [self.authCodeTextFieldView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.offset(0);
@@ -47,6 +24,34 @@
 
     [self.authCodeTextFieldView reloadData];
 ```
+
+## 自定义样式的实现.
+
+### 仿美团样式(UI颜色就懒得还原了).
+
+![](https://github.com/MeteoriteMan/Assets/blob/master/png/CHAuthCodeTextFieldView-Demo(0.0.2)@2x.png?raw=true)
+
+**注:传入的类一定是CHAuthCodeTextField类的子类**
+重写`- (instancetype)initWithFrame:(CGRect)frame`之后一定要调用一下`[self setTextfieldNormal]`
+
+```
+- (void)setTextFieldNormarl {
+    [super setTextFieldNormarl];
+	/// 正常状态
+}
+
+- (void)setTextFieldEdit {
+    [super setTextFieldEdit];
+    /// 编辑状态
+}
+
+创建验证码视图的时候
+`- (instancetype)initWithCHAuthCodeTextTextFieldSubClass:(Class)authCodeTextField;`
+class传入你自定义的Class
+
+```
+
+
 
 ## 安装
 

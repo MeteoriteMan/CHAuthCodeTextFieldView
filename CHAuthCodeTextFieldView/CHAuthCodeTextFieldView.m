@@ -12,6 +12,8 @@
 
 @interface CHAuthCodeTextFieldView () <UITextFieldDelegate ,CHAuthCodeTextFieldDeleteBackwardDelegate>
 
+@property (nonatomic ,strong) Class authCodeTextFieldViewClass;
+
 @property (nonatomic ,strong) NSArray <CHAuthCodeTextField *> *textFieldArray;
 
 @end
@@ -26,13 +28,37 @@
 }
 */
 
-- (void)setup {
-
+- (Class)authCodeTextFieldViewClass {
+    if (!_authCodeTextFieldViewClass) {
+        _authCodeTextFieldViewClass = [CHAuthCodeTextField class];
+    }
+    return _authCodeTextFieldViewClass;
 }
 
-- (instancetype)initWithFrame:(CGRect)frame {
-    if (self = [super initWithFrame:frame]) {
-        [self setup];
+- (UIColor *)textFieldColor {
+    if (!_textFieldColor) {
+        _textFieldColor = [UIColor darkTextColor];
+    }
+    return _textFieldColor;
+}
+
+- (UIFont *)textFieldNormalFont {
+    if (!_textFieldNormalFont) {
+        _textFieldNormalFont = [UIFont systemFontOfSize:14];
+    }
+    return _textFieldNormalFont;
+}
+
+- (UIFont *)textFieldEditingFont {
+    if (!_textFieldEditingFont) {
+        _textFieldEditingFont = self.textFieldNormalFont;
+    }
+    return _textFieldEditingFont;
+}
+
+- (instancetype)initWithCHAuthCodeTextTextFieldSubClass:(Class)authCodeTextField {
+    if (self = [super init]) {
+        self.authCodeTextFieldViewClass = authCodeTextField;
     }
     return self;
 }
@@ -42,35 +68,42 @@
         [textField removeFromSuperview];
     }
     [self layoutIfNeeded];
-    CGFloat interval = (self.bounds.size.width - self.intervalLeft - self.intervalRight - self.numberOfTextField * self.sizeOfTextField.width) / (self.numberOfTextField - 1);
     NSMutableArray *arrayM = [NSMutableArray array];
     for (int i = 0; i < self.numberOfTextField; i++) {
-        CHAuthCodeTextField *textFiled = [[CHAuthCodeTextField alloc] init];
+        CHAuthCodeTextField *textFiled = [[[self.authCodeTextFieldViewClass class] alloc] init];
         textFiled.delegate = self;
         textFiled.authCodeTextFieldDeleteBackwardDelegate = self;
+        if (@available(iOS 12.0, *)) {
+            textFiled.textContentType = UITextContentTypeOneTimeCode;
+        } else {
+            // Fallback on earlier versions
+            if (@available(iOS 10.0, *)) {
+                textFiled.textContentType = @"one-time-code";
+            }
+        }
         [self addSubview:textFiled];
         textFiled.tintColor = self.textFieldCursorColor;
-        textFiled.font = [UIFont systemFontOfSize:18];
+        textFiled.textColor = self.textFieldColor;
+        textFiled.textFieldNormalFont = self.textFieldNormalFont;
+        textFiled.textFieldEditingFont = self.textFieldEditingFont;
         textFiled.textAlignment = NSTextAlignmentCenter;
         textFiled.layer.borderWidth = self.textFieldBorderWidth;
         textFiled.layer.cornerRadius = self.textFieldBorderCornerRadius;
         textFiled.layer.borderColor = self.textFieldBorderNormalColor.CGColor;
         textFiled.keyboardType = self.textFiledKeyboardType;
         [textFiled mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.height.offset(self.sizeOfTextField.height);
+            make.top.bottom.offset(0);
         }];
         textFiled.tag = i;
         [textFiled addTarget:self action:@selector(textFieldPhoneEditingChanged:) forControlEvents:UIControlEventEditingChanged];
         [arrayM addObject:textFiled];
     }
-    [arrayM.copy mas_distributeViewsAlongAxis:MASAxisTypeHorizontal withFixedSpacing:interval leadSpacing:self.intervalLeft tailSpacing:self.intervalRight];
+    [arrayM.copy mas_distributeViewsAlongAxis:MASAxisTypeHorizontal withFixedSpacing:self.textFieldInterval leadSpacing:self.intervalLeft tailSpacing:self.intervalRight];
     [arrayM.copy mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self).offset(0);
         make.bottom.offset(0);
     }];
     self.textFieldArray = arrayM.copy;
-
-    [self.textFieldArray.firstObject becomeFirstResponder];
 }
 
 - (void)textFieldPhoneEditingChanged:(UITextField *)sender {
@@ -171,12 +204,15 @@
 }
 
 - (void)inputComplete {
+    NSMutableString *stringM = [NSMutableString string];
+    for (CHAuthCodeTextField *textField in self.textFieldArray) {
+        [stringM appendString:textField.text];
+    }
     if (self.authCodeTextFieldViewInputEndBlock) {
-        NSMutableString *stringM = [NSMutableString string];
-        for (CHAuthCodeTextField *textField in self.textFieldArray) {
-            [stringM appendString:textField.text];
-        }
-        self.authCodeTextFieldViewInputEndBlock(stringM.copy);
+        self.authCodeTextFieldViewInputEndBlock(self ,stringM.copy);
+    }
+    if (self.delegate && [self.delegate respondsToSelector:@selector(authCodeTextFieldView:inputEnd:)]) {
+        [self.delegate authCodeTextFieldView:self inputEnd:stringM.copy];
     }
 }
 
@@ -198,7 +234,18 @@
     for (CHAuthCodeTextField *textField in self.textFieldArray) {
         textField.text = @"";
     }
-    [self.textFieldArray.firstObject becomeFirstResponder];
+}
+
+/// 开启输入状态
+- (void)becomeEditStatus {
+    [self textFileBecomeFirstResponder];
+}
+
+/// 结束输入状态
+- (void)resignEditStatus {
+    for (CHAuthCodeTextField *textField in self.textFieldArray) {
+        [textField resignFirstResponder];
+    }
 }
 
 - (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {

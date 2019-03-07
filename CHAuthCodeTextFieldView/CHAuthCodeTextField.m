@@ -18,6 +18,13 @@
 }
 */
 
+- (instancetype)initWithFrame:(CGRect)frame {
+    if (self = [super initWithFrame:frame]) {
+        [self setTextFieldNormarl];
+    }
+    return self;
+}
+
 - (void)deleteBackward {//删除键
     [super deleteBackward];
     BOOL conform = [self.authCodeTextFieldDeleteBackwardDelegate conformsToProtocol:@protocol(CHAuthCodeTextFieldDeleteBackwardDelegate)];
@@ -25,6 +32,24 @@
     if (conform && canResponse) {
         [self.authCodeTextFieldDeleteBackwardDelegate deleteBackward:self];
     }
+}
+
+- (BOOL)becomeFirstResponder {
+    [self setTextFieldEdit];
+    return [super becomeFirstResponder];
+}
+
+- (BOOL)resignFirstResponder {
+    [self setTextFieldNormarl];
+    return [super resignFirstResponder];
+}
+
+- (void)setTextFieldNormarl {
+    self.font = self.textFieldNormalFont;
+}
+
+- (void)setTextFieldEdit {
+    self.font = self.textFieldEditingFont;
 }
 
 @end
