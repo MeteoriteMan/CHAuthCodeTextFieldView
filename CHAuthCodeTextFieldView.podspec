@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
     s.name         = "CHAuthCodeTextFieldView"
-    s.version      = "0.0.2"
-    s.summary      = "You can Use CHAuthCodeTextFieldView to build AuthCodeTextFieldView"
+    s.version      = "0.0.3"
+    s.summary      = "验证码输入框组件"
     s.homepage     = "https://github.com/MeteoriteMan/CHAuthCodeTextFieldView"
     s.license      = "MIT"
     s.license      = { :type => "MIT", :file => "LICENSE" }

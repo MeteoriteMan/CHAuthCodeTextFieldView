@@ -82,6 +82,7 @@
             }
         }
         [self addSubview:textFiled];
+        textFiled.secureTextEntry = self.secureTextEntry;
         textFiled.tintColor = self.textFieldCursorColor;
         textFiled.textColor = self.textFieldColor;
         textFiled.textFieldNormalFont = self.textFieldNormalFont;

@@ -35,6 +35,9 @@ typedef void(^CHAuthCodeTextFieldViewInputEndBlock)(CHAuthCodeTextFieldView *aut
 /// 输入框个数
 @property (nonatomic ,assign) NSInteger numberOfTextField;
 
+/// 是否开启安全输入
+@property (nonatomic ,assign) BOOL secureTextEntry;
+
 /// 左边间距
 @property (nonatomic ,assign) CGFloat intervalLeft;
 

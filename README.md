@@ -32,11 +32,11 @@
 ![](https://github.com/MeteoriteMan/Assets/blob/master/png/CHAuthCodeTextFieldView-Demo(0.0.2)@2x.png?raw=true)
 
 **注:传入的类一定是CHAuthCodeTextField类的子类**
-重写`- (instancetype)initWithFrame:(CGRect)frame`之后一定要调用一下`[self setTextfieldNormal]`
+重写`- (instancetype)initWithFrame:(CGRect)frame`之后一定要调用一下`[self setTextfieldNormal]`不然不能刷新正常状态的UI.
 
 ```
 - (void)setTextFieldNormarl {
-    [super setTextFieldNormarl];
+	[super setTextFieldNormarl];
 	/// 正常状态
 }
 
@@ -62,3 +62,12 @@ class传入你自定义的Class
 安装一下pod
 
 >`#import <CHAuthCodeTextFieldView/CHAuthCodeTextFieldView.h>`
+
+
+## 更新记录
+
+|版本|更新内容|
+|:--|:--|
+|0.0.3|新增secureTextEntry明/暗文支持|
+|0.0.2|支持自定义控件,高度为父控件高度.内容物宽度为自动计算|
+|0.0.1|初版,不支持自定义,以及边框大小得传入|

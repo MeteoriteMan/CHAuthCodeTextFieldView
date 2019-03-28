@@ -24,6 +24,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     self.authCodeTextFieldView = [[CHAuthCodeTextFieldView alloc] initWithCHAuthCodeTextTextFieldSubClass:[CHAuthCodeTextFieldMeiTuanStyle class]];
+    self.authCodeTextFieldView.secureTextEntry = YES;
     self.authCodeTextFieldView.numberOfTextField = 4;
     self.authCodeTextFieldView.textFieldInterval = 8;
     self.authCodeTextFieldView.textFieldNormalFont = [UIFont systemFontOfSize:30];
