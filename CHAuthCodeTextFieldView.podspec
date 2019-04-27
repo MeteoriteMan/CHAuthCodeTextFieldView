@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name         = "CHAuthCodeTextFieldView"
-    s.version      = "0.0.3"
+    s.version      = "0.0.4"
     s.summary      = "验证码输入框组件"
     s.homepage     = "https://github.com/MeteoriteMan/CHAuthCodeTextFieldView"
     s.license      = "MIT"
