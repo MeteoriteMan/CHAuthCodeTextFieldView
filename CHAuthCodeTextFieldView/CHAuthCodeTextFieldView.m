@@ -16,6 +16,8 @@
 
 @property (nonatomic ,strong) NSArray <CHAuthCodeTextField *> *textFieldArray;
 
+@property (nonatomic ,strong) UITextField *firstResponderTextFiled;
+
 @end
 
 @implementation CHAuthCodeTextFieldView
@@ -112,15 +114,10 @@
         [sender endEditing:YES];
         //切换到下一个
         CHAuthCodeTextField *nextTextField;
-        if (sender.tag < self.numberOfTextField - 1) {//如果不是最后一个
-            for (CHAuthCodeTextField *textField in self.textFieldArray) {
-                if (textField.tag == sender.tag + 1) {
-                    nextTextField = textField;
-                    break;
-                }
-            }
+        if (sender.tag < self.textFieldArray.count - 1) {//如果不是最后一个
+            nextTextField = self.textFieldArray[sender.tag + 1];
             [nextTextField becomeFirstResponder];
-        } else if (sender.tag == self.numberOfTextField - 1) {//输入完直接验证
+        } else if (sender.tag == self.textFieldArray.count - 1) {//输入完直接验证
             BOOL allComplete = YES;
             for (CHAuthCodeTextField *textField in self.textFieldArray) {
                 if ([textField.text isEqualToString:@""]) {
@@ -137,53 +134,10 @@
     }
 }
 
-- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
-
-    //这里的if时候为了获取删除操作,如果没有次if会造成当达到字数限制后删除键也不能使用的后果.
-    if (range.length == 1 && string.length == 0) {
-        if (textField.tag != 0) {//不是第一个
-            //清除textField
-            //1.把后头的删掉
-            for (NSInteger i = textField.tag; i < self.textFieldArray.count; i++) {
-                self.textFieldArray[i].text = @"";
-            }
-            //2.把前头的删掉
-            [textField endEditing:YES];
-            [self.textFieldArray[textField.tag - 1] becomeFirstResponder];
-        } else {
-            textField.text = @"";
-        }
-        return NO;
-    } else if (textField.text.length >= 1) {//切换到下个
-        textField.text = [textField.text substringToIndex:1];
-        CHAuthCodeTextField *nextTextField;
-        if (textField.tag < self.numberOfTextField - 1) {//如果不是最后一个
-            for (CHAuthCodeTextField *textFieldNext in self.textFieldArray) {
-                if (textFieldNext.tag == textField.tag + 1) {
-                    nextTextField = textFieldNext;
-                    break;
-                }
-            }
-            nextTextField.text = string;
-            if (nextTextField.tag < self.numberOfTextField) {//不是最后一个
-                for (CHAuthCodeTextField *textFieldNext in self.textFieldArray) {
-                    if (textFieldNext.tag == nextTextField.tag + 1) {
-                        nextTextField = textFieldNext;
-                        break;
-                    }
-                }
-                [nextTextField becomeFirstResponder];
-            }
-        }
-        return NO;
-    }
-
-    return YES;
-}
-
 // 变成第一响应者调用
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
     textField.layer.borderColor = self.textFieldBorderEditingColor.CGColor;
+    self.firstResponderTextFiled = textField;
     return YES;
 }
 
@@ -244,9 +198,7 @@
 
 /// 结束输入状态
 - (void)resignEditStatus {
-    for (CHAuthCodeTextField *textField in self.textFieldArray) {
-        [textField resignFirstResponder];
-    }
+    [self.firstResponderTextFiled resignFirstResponder];
 }
 
 - (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
@@ -255,9 +207,7 @@
     if (CGRectContainsPoint(self.bounds, convertPoint)) {
         return self;
     } else {
-        for (CHAuthCodeTextFieldView *textField in self.textFieldArray) {
-            [textField resignFirstResponder];
-        }
+        [self.firstResponderTextFiled resignFirstResponder];
         return [super hitTest:point withEvent:event];
     }
 }
